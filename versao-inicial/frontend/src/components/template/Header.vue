@@ -6,15 +6,20 @@
     <h1 class="title">
       {{ title }}
     </h1>
+    <User-Dropdown v-if="!hideUserDropDown" />
   </header>
 </template>
 
 <script>
+import UserDropdown from "./UserDropdown.vue";
+
 export default {
   name: "Header",
+  components: { UserDropdown },
   props: {
     title: String,
     hideToggle: Boolean,
+    hideUserDropDown: Boolean,
   },
   computed: {
     icon() {
@@ -66,6 +71,7 @@ header.header > a.toggle {
 }
 
 header.header > a.toggle:hover {
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
 }
 </style>

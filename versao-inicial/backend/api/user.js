@@ -20,7 +20,8 @@ module.exports = app => {
       existsOrError(user.email, 'E-mail não informado')
       existsOrError(user.password, 'Senha não informada')
       existsOrError(user.confirmPassword, 'Confirmação de Senha inválida')
-      equalsOrError(user.password, user.confirmPassword, 'Senhas não conferem')
+      equalsOrError(user.password, user.confirmPassword,
+        'Senhas não conferem')
 
       const userFromDB = await app.db('users')
         .where({ email: user.email }).first()
@@ -76,7 +77,7 @@ module.exports = app => {
       const rowsUpdated = await app.db('users')
         .update({ deletedAt: new Date() })
         .where({ id: req.params.id })
-      existsOrError(rowsUpdated, 'Usuário não foi encontrado')
+      existsOrError(rowsUpdated, 'Usuário não foi encontrado.')
 
       res.status(204).send()
     } catch (msg) {

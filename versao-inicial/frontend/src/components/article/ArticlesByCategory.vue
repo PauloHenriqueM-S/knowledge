@@ -21,8 +21,8 @@
 <script>
 import { baseApiUrl } from "@/global";
 import axios from "axios";
-import PageTitle from "../template/PageTitle.vue";
-import ArticleItem from "./ArticleItem.vue";
+import PageTitle from "../template/PageTitle";
+import ArticleItem from "./ArticleItem";
 
 export default {
   name: "ArticlesByCategory",
@@ -48,6 +48,17 @@ export default {
 
         if (res.data.length === 0) this.loadMore = false;
       });
+    },
+  },
+  watch: {
+    $route(to) {
+      this.category.id = to.params.id;
+      this.articles = [];
+      this.page = 1;
+      this.loadMore = true;
+
+      this.getCategory();
+      this.getArticles();
     },
   },
   mounted() {

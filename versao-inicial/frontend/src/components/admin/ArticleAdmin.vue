@@ -78,7 +78,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="articles" :fields="fields">
-      <template slot="actions" slot-scope="data">
+      <template v-slot:cell(actions)="data">
         <b-button
           variant="warning"
           @click="loadArticle(data.item)"

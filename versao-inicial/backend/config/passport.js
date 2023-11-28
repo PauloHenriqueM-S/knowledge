@@ -1,7 +1,7 @@
 const { authSecret } = require('../.env')
 const passport = require('passport')
-const passporJwt = require('passport-jwt')
-const { Strategy, ExtractJwt } = passporJwt
+const passportJwt = require('passport-jwt')
+const { Strategy, ExtractJwt } = passportJwt
 
 module.exports = app => {
   const params = {

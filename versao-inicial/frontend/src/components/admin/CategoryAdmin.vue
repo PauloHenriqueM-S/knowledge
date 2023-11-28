@@ -37,7 +37,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="categories" :fields="fields">
-      <template slot="actions" slot-scope="data">
+      <template v-slot:cell(actions)="data">
         <b-button
           variant="warning"
           @click="loadCategory(data.item)"

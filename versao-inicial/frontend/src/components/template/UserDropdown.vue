@@ -11,7 +11,7 @@
       <router-link to="/admin">
         <i class="fa fa-cogs"></i> Administração
       </router-link>
-      <router-link to=""> <i class="fa fa-sing-out"></i> Sair </router-link>
+      <a href @click.prevent="logout"> <i class="fa fa-sing-out"></i> Sair </a>
     </div>
   </div>
 </template>

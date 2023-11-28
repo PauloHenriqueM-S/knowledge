@@ -37,7 +37,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="categories" :fields="fields">
-      <template v-slot:cell(actions)="data">
+      <template slot="actions" slot-scope="data">
         <b-button
           variant="warning"
           @click="loadCategory(data.item)"
@@ -76,7 +76,7 @@ export default {
     loadCategories() {
       const url = `${baseApiUrl}/categories`;
       axios.get(url).then((res) => {
-        // this.categories = res.data;
+        // this.categories = res.data
         this.categories = res.data.map((category) => {
           return { ...category, value: category.id, text: category.path };
         });

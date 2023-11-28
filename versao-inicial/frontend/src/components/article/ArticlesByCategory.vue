@@ -74,6 +74,7 @@ export default {
   list-style-type: none;
   padding: 0px;
 }
+
 .articles-by-category .load-more {
   display: flex;
   flex-direction: column;

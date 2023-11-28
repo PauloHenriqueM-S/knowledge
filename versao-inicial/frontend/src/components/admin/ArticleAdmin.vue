@@ -19,12 +19,12 @@
           v-model="article.description"
           required
           :readonly="mode === 'remove'"
-          placeholder="Informe a Descrição do Artigo..."
+          placeholder="Informe o Nome do Artigo..."
         />
       </b-form-group>
       <b-form-group
         v-if="mode === 'save'"
-        label="Imagem (URL)"
+        label="Imagem (URL):"
         label-for="article-imageUrl"
       >
         <b-form-input
@@ -78,7 +78,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="articles" :fields="fields">
-      <template v-slot:cell(actions)="data">
+      <template slot="actions" slot-scope="data">
         <b-button
           variant="warning"
           @click="loadArticle(data.item)"
@@ -130,7 +130,6 @@ export default {
     loadArticles() {
       const url = `${baseApiUrl}/articles?page=${this.page}`;
       axios.get(url).then((res) => {
-        // this.articles = res.data;
         this.articles = res.data.data;
         this.count = res.data.count;
         this.limit = res.data.limit;
@@ -163,7 +162,6 @@ export default {
     },
     loadArticle(article, mode = "save") {
       this.mode = mode;
-      // this.article = { ...article };
       axios
         .get(`${baseApiUrl}/articles/${article.id}`)
         .then((res) => (this.article = res.data));
@@ -200,4 +198,3 @@ export default {
 
 <style>
 </style>
-

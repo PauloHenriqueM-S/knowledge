@@ -77,7 +77,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="users" :fields="fields">
-      <template v-slot:cell(actions)="data">
+      <template slot="actions" slot-scope="data">
         <b-button variant="warning" @click="loadUser(data.item)" class="mr-2">
           <i class="fa fa-pencil"></i>
         </b-button>

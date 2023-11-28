@@ -24,19 +24,14 @@
 </template>
 
 <script>
-import PageTitle from "../template/PageTitle.vue";
-import ArticleAdmin from "./ArticleAdmin.vue";
-import CategoryAdmin from "./CategoryAdmin.vue";
-import UserAdmin from "./UserAdmin.vue";
+import PageTitle from "../template/PageTitle";
+import ArticleAdmin from "./ArticleAdmin";
+import CategoryAdmin from "./CategoryAdmin";
+import UserAdmin from "./UserAdmin";
 
 export default {
   name: "AdminPages",
-  components: {
-    PageTitle,
-    ArticleAdmin,
-    CategoryAdmin,
-    UserAdmin,
-  },
+  components: { PageTitle, ArticleAdmin, CategoryAdmin, UserAdmin },
 };
 </script>
 
